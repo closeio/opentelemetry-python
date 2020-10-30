@@ -407,11 +407,11 @@ class AgentClientUDP:
         self.client.emitBatch(batch)
         buff = self.buffer.getvalue()
         if len(buff) > self.max_packet_size:
-            logger.warning(
-                "Data exceeds the max UDP packet size; size %r, max %r",
-                len(buff),
-                self.max_packet_size,
-            )
+            # logger.warning(
+            #     "Data exceeds the max UDP packet size; size %r, max %r",
+            #     len(buff),
+            #     self.max_packet_size,
+            # )
             return
 
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udp_socket:
